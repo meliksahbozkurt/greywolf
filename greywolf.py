@@ -1,5 +1,6 @@
 import sys
 import time
+import os
 if not sys.version_info.major == 3:
     print("[ERROR] GreyWolf is using Python3. Use Python3.")
     time.sleep(3)
@@ -11,32 +12,16 @@ import random
 
 try:
     from datetime import datetime
-except:
-    print("[ERROR] Install datetime module. (pip3 install colorama)")
-    time.sleep(3)
-    sys.exit()
-
-try:
     from colorama import init,Fore
     init()
-except:
-    print("[ERROR] Install colorama module. (pip3 install datetime)")
-    time.sleep(3)
-    sys.exit()
-
-try:
     from bs4 import BeautifulSoup
-except:
-    print("[ERROR] Install bs4 module. (pip3 install bs4)")
-    time.sleep(3)
-    sys.exit()
-
-try:
     import requests
+
 except:
-    print("[ERROR] Install requests module. (pip3 install requests)")
-    time.sleep(3)
-    sys.exit()
+    print("[ERROR] Installing modules from requirements.txt")
+    os.system("pip3 install -r requirements.txt")
+
+
 
 #greywolf imports
 from lib.wordpress import Wordpress
