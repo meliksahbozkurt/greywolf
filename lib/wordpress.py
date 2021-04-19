@@ -182,7 +182,6 @@ class Wordpress(Brute):
 
                     elif "Too many failed login attempts. Please try again in 20 minutes." in text:
                         self.displayMessage(error="This ip address has been banned!")
-                        self.reAttempt(username, password, "XML")
                         raise requests.exceptions.ProxyError #remove proxy
 
                     else: #if there is just a normal unsuccesful message
